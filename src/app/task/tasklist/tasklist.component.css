@@ -1,0 +1,62 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: flex-end;
+}
+.createTaskbtn,
+.addTask {
+  background-color: rgb(47, 228, 47);
+  color: white;
+  padding: 0.5rem;
+  border: 0.5px solid rgb(43, 192, 43);
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+  width: 100px;
+}
+.createTaskbtn:hover,
+.addTask:hover {
+  transform: translateY(-1px);
+  box-shadow: 1px 1px 10px 1px rgb(216, 216, 216);
+}
+
+.createTaskbtn:active,
+.addTask:active {
+  transform: translateY(2px);
+  box-shadow: 1px 1px 5px 1px rgb(216, 216, 216);
+  background-color: rgb(21, 145, 21);
+}
+
+.textarea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+textarea {
+  width: 100;
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.taskContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  padding: 0.5rem;
+  box-shadow: 1px 1px 10px 1px rgb(216, 216, 216);
+}
+
+.card-complete {
+  background-color: rgb(47, 228, 47);
+}
+
+.completedDiv {
+  background-color: gray;
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  margin: 0.5rem 0;
+}

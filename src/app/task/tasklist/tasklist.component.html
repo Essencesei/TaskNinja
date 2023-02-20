@@ -1,0 +1,56 @@
+<div class="container">
+  <button (click)="toggleAddTask($event)" class="createTaskbtn">
+    Create Task
+  </button>
+</div>
+<div *ngIf="addtaskToggle" class="textarea">
+  <textarea
+    name=""
+    id=""
+    cols="30"
+    rows="10"
+    [(ngModel)]="taskTextArea"
+  ></textarea>
+
+  <button (click)="addTask()" class="addTask">Add Task</button>
+</div>
+
+<div class="taskContainer">
+  <div class="ongoing">
+    <div *ngFor="let task of taskData; let i = index" class="card">
+      {{ task.taskDescription }}
+      {{ task.date | date : "MMMM, d, y" }}
+      {{ task.date | date : "shortTime" }}
+
+      <input
+        type="checkbox"
+        name=""
+        id=""
+        [(ngModel)]="task.isDone"
+        (click)="check($event, i)"
+      />
+      <button (click)="onDeleteTask(i)">Delete</button>
+    </div>
+  </div>
+
+  <div *ngIf="completedTask.length != 0" class="completedDiv">Completed</div>
+  <div class="completed">
+    <div
+      *ngFor="let task of completedTask; let i = index"
+      class="card card-complete"
+    >
+      Completed Task
+      {{ task.taskDescription }}
+      {{ task.date | date : "MMMM, d, y" }}
+      {{ task.date | date : "shortTime" }}
+
+      <input
+        type="checkbox"
+        name=""
+        id=""
+        [(ngModel)]="task.isDone"
+        (click)="check($event, i)"
+      />
+    </div>
+  </div>
+</div>
